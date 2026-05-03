@@ -1,38 +1,5 @@
 ```
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-.ENV
-.env
-
-# Database
-*.db
-*.db-journal
-
-# Logs
-*.log
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-
-# Coverage
-.coverage
-htmlcov/
-coverage/
+# Scripts
+publish.bat
+publish.sh
 ```
