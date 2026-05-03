@@ -1,0 +1,388 @@
+{
+  "exercises": [
+    {
+      "name": "Squats",
+      "type": "strength",
+      "base_xp_per_rep": 2.5,
+      "zones": {"legs": 1.0, "core": 0.4, "back": 0.2},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 90},
+      "notes": "Keep back straight, knees behind toes"
+    },
+    {
+      "name": "Deadlifts",
+      "type": "strength",
+      "base_xp_per_rep": 3.0,
+      "zones": {"back": 1.0, "legs": 0.8, "core": 0.5, "grip": 0.6},
+      "beginner_params": {"sets": 3, "reps": 8, "rest_seconds": 120},
+      "notes": "Maintain neutral spine throughout movement"
+    },
+    {
+      "name": "Bench Press",
+      "type": "strength",
+      "base_xp_per_rep": 2.5,
+      "zones": {"chest": 1.0, "arms": 0.7, "back": 0.3},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 90},
+      "notes": "Retract shoulder blades, control the descent"
+    },
+    {
+      "name": "Pull-ups",
+      "type": "strength",
+      "base_xp_per_rep": 2.0,
+      "zones": {"back": 1.0, "arms": 0.8, "grip": 0.5, "core": 0.3},
+      "beginner_params": {"sets": 3, "reps": 5, "rest_seconds": 90},
+      "notes": "Full range of motion, chin over bar"
+    },
+    {
+      "name": "Overhead Press",
+      "type": "strength",
+      "base_xp_per_rep": 2.0,
+      "zones": {"arms": 1.0, "shoulders": 0.9, "core": 0.4, "back": 0.2},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 90},
+      "notes": "Keep core tight, avoid arching back"
+    },
+    {
+      "name": "Barbell Rows",
+      "type": "strength",
+      "base_xp_per_rep": 2.5,
+      "zones": {"back": 1.0, "arms": 0.6, "core": 0.4, "grip": 0.4},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 90},
+      "notes": "Pull to lower chest, squeeze shoulder blades"
+    },
+    {
+      "name": "Lunges",
+      "type": "strength",
+      "base_xp_per_rep": 1.5,
+      "zones": {"legs": 1.0, "core": 0.3, "mobility": 0.4},
+      "beginner_params": {"sets": 3, "reps": 12, "rest_seconds": 60},
+      "notes": "Step far enough, knee doesn't pass toes"
+    },
+    {
+      "name": "Dips",
+      "type": "strength",
+      "base_xp_per_rep": 2.0,
+      "zones": {"chest": 0.8, "arms": 1.0, "back": 0.3},
+      "beginner_params": {"sets": 3, "reps": 8, "rest_seconds": 90},
+      "notes": "Lean forward for chest emphasis"
+    },
+    {
+      "name": "Plank",
+      "type": "endurance",
+      "base_xp_per_rep": 0.5,
+      "zones": {"core": 1.0, "back": 0.4, "shoulders": 0.3},
+      "beginner_params": {"sets": 3, "reps": 1, "duration_seconds": 30, "rest_seconds": 60},
+      "notes": "Hold position, keep body in straight line"
+    },
+    {
+      "name": "Mountain Climbers",
+      "type": "cardio",
+      "base_xp_per_rep": 0.8,
+      "zones": {"cardio": 1.0, "core": 0.6, "legs": 0.4},
+      "beginner_params": {"sets": 3, "reps": 20, "rest_seconds": 45},
+      "notes": "Fast pace, engage core throughout"
+    },
+    {
+      "name": "Burpees",
+      "type": "cardio",
+      "base_xp_per_rep": 1.5,
+      "zones": {"cardio": 1.0, "legs": 0.5, "chest": 0.4, "core": 0.4},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 60},
+      "notes": "Full extension at top, chest to floor"
+    },
+    {
+      "name": "Jumping Jacks",
+      "type": "cardio",
+      "base_xp_per_rep": 0.4,
+      "zones": {"cardio": 1.0, "legs": 0.3},
+      "beginner_params": {"sets": 3, "reps": 30, "rest_seconds": 30},
+      "notes": "Warm-up exercise, maintain rhythm"
+    },
+    {
+      "name": "High Knees",
+      "type": "cardio",
+      "base_xp_per_rep": 0.6,
+      "zones": {"cardio": 1.0, "legs": 0.5, "core": 0.3},
+      "beginner_params": {"sets": 3, "reps": 30, "rest_seconds": 45},
+      "notes": "Drive knees high, pump arms"
+    },
+    {
+      "name": "Russian Twists",
+      "type": "strength",
+      "base_xp_per_rep": 0.8,
+      "zones": {"core": 1.0, "obliques": 0.9},
+      "beginner_params": {"sets": 3, "reps": 20, "rest_seconds": 60},
+      "notes": "Rotate through torso, not just arms"
+    },
+    {
+      "name": "Leg Raises",
+      "type": "strength",
+      "base_xp_per_rep": 1.0,
+      "zones": {"core": 1.0, "legs": 0.3},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 60},
+      "notes": "Control the descent, avoid swinging"
+    },
+    {
+      "name": "Bicycle Crunches",
+      "type": "strength",
+      "base_xp_per_rep": 0.7,
+      "zones": {"core": 1.0, "obliques": 0.8},
+      "beginner_params": {"sets": 3, "reps": 20, "rest_seconds": 60},
+      "notes": "Elbow to opposite knee, rotate torso"
+    },
+    {
+      "name": "Glute Bridges",
+      "type": "strength",
+      "base_xp_per_rep": 1.2,
+      "zones": {"legs": 0.7, "core": 0.4, "back": 0.2},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 60},
+      "notes": "Squeeze glutes at top"
+    },
+    {
+      "name": "Calf Raises",
+      "type": "strength",
+      "base_xp_per_rep": 0.8,
+      "zones": {"legs": 1.0},
+      "beginner_params": {"sets": 3, "reps": 20, "rest_seconds": 45},
+      "notes": "Full range, pause at top"
+    },
+    {
+      "name": "Push-ups",
+      "type": "strength",
+      "base_xp_per_rep": 1.5,
+      "zones": {"chest": 1.0, "arms": 0.7, "core": 0.4},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 60},
+      "notes": "Full range, chest to floor"
+    },
+    {
+      "name": "Inverted Rows",
+      "type": "strength",
+      "base_xp_per_rep": 1.8,
+      "zones": {"back": 1.0, "arms": 0.7, "grip": 0.4},
+      "beginner_params": {"sets": 3, "reps": 12, "rest_seconds": 60},
+      "notes": "Keep body straight, pull chest to bar"
+    },
+    {
+      "name": "Farmer's Walk",
+      "type": "strength",
+      "base_xp_per_rep": 2.0,
+      "zones": {"grip": 1.0, "core": 0.6, "legs": 0.4, "back": 0.3},
+      "beginner_params": {"sets": 3, "reps": 1, "distance_meters": 30, "rest_seconds": 90},
+      "notes": "Walk tall, don't let weights swing"
+    },
+    {
+      "name": "Kettlebell Swings",
+      "type": "strength",
+      "base_xp_per_rep": 1.8,
+      "zones": {"legs": 0.6, "core": 0.5, "back": 0.4, "cardio": 0.6},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 60},
+      "notes": "Hip hinge, explosive movement"
+    },
+    {
+      "name": "Box Jumps",
+      "type": "strength",
+      "base_xp_per_rep": 2.0,
+      "zones": {"legs": 1.0, "cardio": 0.4},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 90},
+      "notes": "Land softly, step down don't jump"
+    },
+    {
+      "name": "Wall Sit",
+      "type": "endurance",
+      "base_xp_per_rep": 0.4,
+      "zones": {"legs": 1.0, "core": 0.3},
+      "beginner_params": {"sets": 3, "reps": 1, "duration_seconds": 30, "rest_seconds": 60},
+      "notes": "90 degree angle, back flat against wall"
+    },
+    {
+      "name": "Superman Hold",
+      "type": "endurance",
+      "base_xp_per_rep": 0.5,
+      "zones": {"back": 1.0, "core": 0.4},
+      "beginner_params": {"sets": 3, "reps": 1, "duration_seconds": 20, "rest_seconds": 45},
+      "notes": "Lift chest and legs, hold position"
+    },
+    {
+      "name": "Side Plank",
+      "type": "endurance",
+      "base_xp_per_rep": 0.5,
+      "zones": {"core": 1.0, "obliques": 0.9},
+      "beginner_params": {"sets": 3, "reps": 1, "duration_seconds": 20, "rest_seconds": 45},
+      "notes": "Stack feet or stagger, hips high"
+    },
+    {
+      "name": "Hanging Leg Raises",
+      "type": "strength",
+      "base_xp_per_rep": 1.5,
+      "zones": {"core": 1.0, "grip": 0.5, "legs": 0.3},
+      "beginner_params": {"sets": 3, "reps": 10, "rest_seconds": 60},
+      "notes": "Control the movement, avoid swinging"
+    },
+    {
+      "name": "Face Pulls",
+      "type": "strength",
+      "base_xp_per_rep": 1.2,
+      "zones": {"back": 0.8, "shoulders": 1.0, "grip": 0.3},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 60},
+      "notes": "Pull to face, external rotation"
+    },
+    {
+      "name": "Lateral Raises",
+      "type": "strength",
+      "base_xp_per_rep": 0.8,
+      "zones": {"shoulders": 1.0},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 45},
+      "notes": "Slight bend in elbows, raise to shoulder height"
+    },
+    {
+      "name": "Front Raises",
+      "type": "strength",
+      "base_xp_per_rep": 0.8,
+      "zones": {"shoulders": 1.0, "chest": 0.2},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 45},
+      "notes": "Alternate arms or together"
+    },
+    {
+      "name": "Tricep Extensions",
+      "type": "strength",
+      "base_xp_per_rep": 1.0,
+      "zones": {"arms": 1.0},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 45},
+      "notes": "Keep elbows stationary"
+    },
+    {
+      "name": "Bicep Curls",
+      "type": "strength",
+      "base_xp_per_rep": 1.0,
+      "zones": {"arms": 1.0, "grip": 0.3},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 45},
+      "notes": "Full range, control the eccentric"
+    },
+    {
+      "name": "Hammer Curls",
+      "type": "strength",
+      "base_xp_per_rep": 1.0,
+      "zones": {"arms": 1.0, "grip": 0.5},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 45},
+      "notes": "Neutral grip throughout"
+    },
+    {
+      "name": "Wrist Curls",
+      "type": "strength",
+      "base_xp_per_rep": 0.5,
+      "zones": {"grip": 1.0, "arms": 0.3},
+      "beginner_params": {"sets": 3, "reps": 20, "rest_seconds": 45},
+      "notes": "Isolate forearms, full range"
+    },
+    {
+      "name": "Neck Bridges",
+      "type": "strength",
+      "base_xp_per_rep": 1.5,
+      "zones": {"neck": 1.0, "core": 0.3},
+      "beginner_params": {"sets": 3, "reps": 1, "duration_seconds": 10, "rest_seconds": 60},
+      "notes": "Start gently, build up gradually"
+    },
+    {
+      "name": "Cat-Cow Stretch",
+      "type": "flexibility",
+      "base_xp_per_rep": 0.3,
+      "zones": {"flexibility": 1.0, "mobility": 0.8, "back": 0.4},
+      "beginner_params": {"sets": 2, "reps": 10, "rest_seconds": 0},
+      "notes": "Slow controlled movement through spine"
+    },
+    {
+      "name": "World's Greatest Stretch",
+      "type": "mobility",
+      "base_xp_per_rep": 0.8,
+      "zones": {"mobility": 1.0, "flexibility": 0.8, "legs": 0.4},
+      "beginner_params": {"sets": 2, "reps": 5, "rest_seconds": 0},
+      "notes": "Dynamic stretch, full body"
+    },
+    {
+      "name": "Hip Flexor Stretch",
+      "type": "flexibility",
+      "base_xp_per_rep": 0.4,
+      "zones": {"flexibility": 1.0, "mobility": 0.6, "legs": 0.3},
+      "beginner_params": {"sets": 2, "reps": 1, "duration_seconds": 30, "rest_seconds": 0},
+      "notes": "Hold stretch, breathe deeply"
+    },
+    {
+      "name": "Pigeon Pose",
+      "type": "flexibility",
+      "base_xp_per_rep": 0.5,
+      "zones": {"flexibility": 1.0, "mobility": 0.7, "legs": 0.4},
+      "beginner_params": {"sets": 2, "reps": 1, "duration_seconds": 45, "rest_seconds": 0},
+      "notes": "Deep hip stretch, relax into it"
+    },
+    {
+      "name": "Thoracic Extension",
+      "type": "mobility",
+      "base_xp_per_rep": 0.4,
+      "zones": {"mobility": 1.0, "back": 0.8, "flexibility": 0.5},
+      "beginner_params": {"sets": 2, "reps": 10, "rest_seconds": 0},
+      "notes": "Focus on upper back extension"
+    },
+    {
+      "name": "Ankle Mobility Drill",
+      "type": "mobility",
+      "base_xp_per_rep": 0.3,
+      "zones": {"mobility": 1.0, "legs": 0.3},
+      "beginner_params": {"sets": 2, "reps": 10, "rest_seconds": 0},
+      "notes": "Knee over toe, controlled movement"
+    },
+    {
+      "name": "Shoulder Dislocates",
+      "type": "mobility",
+      "base_xp_per_rep": 0.4,
+      "zones": {"mobility": 1.0, "shoulders": 0.9, "flexibility": 0.6},
+      "beginner_params": {"sets": 2, "reps": 10, "rest_seconds": 0},
+      "notes": "Use band or stick, wide grip"
+    },
+    {
+      "name": "Running",
+      "type": "cardio",
+      "base_xp_per_rep": 3.0,
+      "zones": {"cardio": 1.0, "legs": 0.6, "core": 0.3},
+      "beginner_params": {"sets": 1, "reps": 1, "duration_minutes": 20, "rest_seconds": 0},
+      "notes": "Steady pace, good form"
+    },
+    {
+      "name": "Cycling",
+      "type": "cardio",
+      "base_xp_per_rep": 2.5,
+      "zones": {"cardio": 1.0, "legs": 0.7},
+      "beginner_params": {"sets": 1, "reps": 1, "duration_minutes": 25, "rest_seconds": 0},
+      "notes": "Maintain cadence, proper seat height"
+    },
+    {
+      "name": "Rowing Machine",
+      "type": "cardio",
+      "base_xp_per_rep": 2.8,
+      "zones": {"cardio": 1.0, "back": 0.6, "legs": 0.5, "arms": 0.4},
+      "beginner_params": {"sets": 1, "reps": 1, "duration_minutes": 15, "rest_seconds": 0},
+      "notes": "Drive with legs, finish with arms"
+    },
+    {
+      "name": "Swimming",
+      "type": "cardio",
+      "base_xp_per_rep": 3.5,
+      "zones": {"cardio": 1.0, "back": 0.5, "arms": 0.6, "core": 0.4},
+      "beginner_params": {"sets": 1, "reps": 1, "duration_minutes": 20, "rest_seconds": 0},
+      "notes": "Full body workout, low impact"
+    },
+    {
+      "name": "Battle Ropes",
+      "type": "cardio",
+      "base_xp_per_rep": 1.5,
+      "zones": {"cardio": 1.0, "arms": 0.7, "core": 0.5, "shoulders": 0.4},
+      "beginner_params": {"sets": 3, "reps": 1, "duration_seconds": 30, "rest_seconds": 45},
+      "notes": "Explosive waves, engage core"
+    },
+    {
+      "name": "Medicine Ball Slams",
+      "type": "strength",
+      "base_xp_per_rep": 1.8,
+      "zones": {"core": 0.8, "arms": 0.6, "cardio": 0.5, "back": 0.3},
+      "beginner_params": {"sets": 3, "reps": 15, "rest_seconds": 60},
+      "notes": "Full extension overhead, slam down hard"
+    }
+  ]
+}
