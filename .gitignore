@@ -1,38 +1,38 @@
 ```
-# Dependencies
-node_modules/
-
-# Build outputs
-dist/
-
-# Environment variables
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.ENV
 .env
-.env.local
-.env.*
+
+# Database
+*.db
+*.db-journal
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # IDE
 .vscode/
 .idea/
 
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.swp
-*.swo
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Package manager
-package-lock.json
-yarn.lock
-
-# Tauri
-src-tauri/target/
-
-# TypeScript
-*.tsbuildinfo
+# Coverage
+.coverage
+htmlcov/
+coverage/
 ```
