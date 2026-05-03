@@ -1,0 +1,612 @@
+/* ==========================================================================
+   Fitness RPG - Old Manuscript Style
+   Визуальный стиль: Vintage RPG / Старинный манускрипт
+   ========================================================================== */
+
+:root {
+    /* Цветовая палитра */
+    --bg-paper: #e3d5ca;
+    --bg-paper-dark: #d2b48c;
+    --ink-black: #1a1a1a;
+    --ink-light: #3a3a3a;
+    --accent-red: #8b1a1a;
+    --accent-gold: #b8860b;
+    --white-stroke: #f5f5f0;
+    
+    /* Шрифты */
+    --font-serif: 'Cinzel', Georgia, serif;
+    --font-mono: 'Courier Prime', 'Courier New', monospace;
+    
+    /* Размеры */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Анимации */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* ==========================================================================
+   Базовые стили
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-mono);
+    background-color: var(--bg-paper);
+    color: var(--ink-black);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Фон старой бумаги с текстурой */
+.parchment-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-color: var(--bg-paper);
+    background-image: 
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse at center, transparent 0%, rgba(139, 69, 19, 0.05) 100%);
+    opacity: 1;
+}
+
+/* Пятна старины */
+.parchment-bg::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(139, 69, 19, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.parchment-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(ellipse, rgba(100, 50, 10, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(15px);
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+}
+
+/* ==========================================================================
+   Левая панель: Силуэт
+   ========================================================================== */
+
+.left-panel {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid var(--ink-black);
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .left-panel {
+        border-right: none;
+        border-bottom: 2px solid var(--ink-black);
+    }
+}
+
+.main-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ink-black);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+    border-bottom: 3px double var(--ink-black);
+    padding-bottom: var(--spacing-sm);
+}
+
+.character-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 400/600;
+}
+
+.character-svg,
+.lines-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lines-svg {
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Стили зон тела */
+.zone-zone {
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.zone-path {
+    transition: all var(--transition-fast);
+}
+
+.zone-zone:hover .zone-path {
+    stroke: var(--accent-red);
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 3px rgba(139, 26, 26, 0.5));
+}
+
+.zone-highlight {
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.zone-zone:hover .zone-highlight {
+    opacity: 1;
+}
+
+/* Общая статистика */
+.overall-stats {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border: 2px solid var(--ink-black);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-value {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink-black);
+}
+
+/* ==========================================================================
+   Правая панель: Характеристики
+   ========================================================================== */
+
+.right-panel {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--ink-black);
+}
+
+.panel-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink-black);
+}
+
+.username {
+    font-size: 0.9rem;
+    color: var(--accent-red);
+    font-weight: 700;
+}
+
+/* Детали зоны */
+.zone-details {
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid var(--ink-black);
+    border-radius: 4px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--ink-light);
+}
+
+.empty-state p {
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+}
+
+.icon-man {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+/* Карточка зоны */
+.zone-card {
+    animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.zone-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.zone-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink-black);
+}
+
+.zone-card-level {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-red);
+}
+
+.xp-info {
+    margin-bottom: var(--spacing-md);
+}
+
+.xp-text {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Прогресс-бар в стиле старинной шкалы */
+.progress-bar {
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--ink-black) 0px,
+        var(--ink-black) 1px,
+        transparent 1px,
+        transparent 10px
+    );
+    border: 2px solid var(--ink-black);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--accent-red) 0%,
+        var(--accent-red) 80%,
+        var(--ink-black) 100%
+    );
+    transition: width var(--transition-slow);
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 4px,
+        rgba(255, 255, 255, 0.2) 5px,
+        rgba(255, 255, 255, 0.2) 10px
+    );
+}
+
+.zone-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px dashed var(--ink-black);
+}
+
+.zone-stat {
+    font-size: 0.8rem;
+}
+
+.zone-stat-label {
+    color: var(--ink-light);
+    margin-right: var(--spacing-xs);
+}
+
+.zone-stat-value {
+    font-weight: 700;
+    color: var(--ink-black);
+}
+
+/* Декремент */
+.decay-warning {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: rgba(139, 26, 26, 0.1);
+    border-left: 3px solid var(--accent-red);
+    font-size: 0.8rem;
+}
+
+.decay-warning strong {
+    color: var(--accent-red);
+}
+
+/* Список упражнений */
+.exercise-list {
+    flex: 1;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-black);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--ink-black);
+}
+
+.exercise-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.exercise-item {
+    padding: var(--spacing-md);
+    border: 1px solid var(--ink-black);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.exercise-item:hover {
+    background: rgba(139, 26, 26, 0.1);
+    border-color: var(--accent-red);
+}
+
+.exercise-name {
+    font-weight: 700;
+    color: var(--ink-black);
+    margin-bottom: var(--spacing-xs);
+}
+
+.exercise-meta {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.exercise-type {
+    text-transform: uppercase;
+}
+
+.exercise-zones {
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Tooltip
+   ========================================================================== */
+
+.tooltip {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    z-index: 1000;
+    max-width: 280px;
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+.tooltip-content {
+    background: var(--bg-paper);
+    border: 2px solid var(--ink-black);
+    border-radius: 4px;
+    padding: var(--spacing-md);
+    box-shadow: 4px 4px 0 rgba(26, 26, 26, 0.2);
+}
+
+.tooltip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tooltip-zone-name {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink-black);
+    text-transform: capitalize;
+}
+
+.tooltip-level {
+    font-weight: 700;
+    color: var(--accent-red);
+    font-size: 0.9rem;
+}
+
+.tooltip-xp {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.tooltip-progress {
+    margin-bottom: var(--spacing-sm);
+}
+
+.tooltip-decay {
+    font-size: 0.75rem;
+    color: var(--accent-red);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Соединительные линии
+   ========================================================================== */
+
+.connection-line {
+    fill: none;
+    stroke: var(--ink-black);
+    stroke-width: 1;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.connection-line-track {
+    stroke-dasharray: 4, 4;
+    opacity: 0.3;
+}
+
+.connection-line-fill {
+    stroke: var(--accent-red);
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset var(--transition-slow);
+}
+
+.zone-zone.active ~ .lines-svg .connection-line {
+    opacity: 1;
+}
+
+.zone-zone.active ~ .lines-svg .connection-line-fill {
+    stroke-dashoffset: 0;
+}
+
+/* Иконка человечка у конца линии */
+.line-icon {
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.zone-zone.active ~ .lines-svg .line-icon {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Адаптивность
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .character-container {
+        max-width: 350px;
+    }
+    
+    .overall-stats {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .right-panel {
+        padding: var(--spacing-md);
+    }
+    
+    /* На мобильных линии скрываются */
+    .lines-svg {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Утилиты
+   ========================================================================== */
+
+.text-gold {
+    color: var(--accent-gold);
+}
+
+.text-red {
+    color: var(--accent-red);
+}
+
+.border-double {
+    border-style: double;
+    border-width: 4px;
+}
